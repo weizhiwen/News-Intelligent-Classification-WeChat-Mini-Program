@@ -1,0 +1,32 @@
+<view id='home'>
+  <!-- 顶部栏 -->
+  <view class='top'>
+    <image bindtap='tap_category' src='{{categoryIcon}}'></image>
+    <view class='search'>
+      <icon type='search' size='35rpx' color='#c8c8c8' />
+      <form>
+        <input name='keyword' value='{{inputValue}}' placeholder="请输入新闻标题" confirm-type='send' bindconfirm="search_news" />
+      </form>
+    </view>
+  </view>
+  <!-- 分类侧边栏 -->
+  <view bindtap='tap_category' class='category {{show ? "category-show" : ""}}'>
+    <view data-text='{{item}}' bindtap='select_category' class='wc {{(currentCategory == item) ? "wc-bold" : ""}}' wx:for='{{categories}}' wx:key='unique'>
+      <text>{{item}}</text>
+    </view>
+  </view>
+  <!-- 新闻列表 -->
+  <view class='news-list'>
+      <view wx:for='{{news}}' wx:key='unique'>
+        <navigator url="../detail/detail?url={{item.news_url}}" hover-class="navigator-hover">
+          <view class='news' data-text='{{item.news_url}}'>
+            <view class='news-title'>{{item.news_title}}</view>
+            <view class='news-category'>网站分类：{{item.news_web_category}} | 机器分类：{{item.news_machine_category}}</view>
+            <view class='news-description'>来源：{{item.news_source}} | 时间：{{item.news_datetime}}</view>
+          </view>
+        </navigator>
+      </view>
+       <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+  </view>
+</view>

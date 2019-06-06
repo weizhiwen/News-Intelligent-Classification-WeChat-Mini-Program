@@ -1,0 +1,153 @@
+#home {
+  height: 100%;
+  padding: 0 0.2rem;
+}
+
+/* 顶部栏 */
+
+.top {
+  position: fixed;
+  width: 100%;
+  height: 70rpx;
+  padding: 5rpx 0 0 0;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #c8c8c8;
+}
+
+.top image {
+  margin-left: 0.2rem;
+  width: 60rpx;
+  height: 60rpx;
+  align-self: center;
+}
+
+.search {
+  margin-left: 15rpx;
+  width: 85%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #c8c8c8;
+  border-radius: 10rpx;
+  align-self: center;
+}
+
+.search icon {
+  padding-left: 0.2rem;
+  align-self: center;
+}
+
+.search input {
+  padding: 0.1rem 0.1rem 0.1rem 0.4rem;
+  width: 100%;
+  height: 50rpx;
+  min-height: 50rpx;
+  align-self: center;
+}
+
+/* 侧边栏 */
+
+.category {
+  height: 100%;
+  width: 150rpx;
+  position: fixed;
+  top: 75rpx;
+  left: -200rpx;
+  background-color: white;
+  z-index: 0;
+  transition: 0.5s;
+  border-right: 1rpx solid #c8c8c8;
+}
+
+.category .wc {
+  text-align: center;
+  color: #c8c8c8;
+  /* border-bottom: 1rpx solid #c8c8c8; */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.category .wc-bold {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.category-show {
+  left: 0;
+  transition: 0.5s;
+}
+
+.page-top {
+  height: 100%;
+  position: fixed;
+  width: 750rpx;
+  background-color: rgb(57, 125, 230);
+  z-index: 0;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+.c-state1 {
+  transform: rotate(0deg) scale(1) translate(75%, 0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(75%, 0%);
+}
+
+/* 新闻列表 */
+
+.news-list {
+  width: 100%;
+  height: 500px;
+  padding-top: 80rpx;
+  flex-direction: column;
+}
+
+.news {
+  margin-bottom: 0.3rem;
+  padding: 0.3rem;
+  border: 0.1rem solid #c8c8c8;
+  border-radius: 10rpx;
+  background: #f0f0f0;
+}
+
+.news-title {
+  font-size: 1.2rem;
+}
+
+.news-category {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.news-description {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+/* 加载更多 */
+
+.loading {
+  padding: 10rpx;
+  text-align: center;
+}
+
+.loading:before {
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  /* background: url(../../images/icon-loading.png) no-repeat; */
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+
+.loading.complete:before {
+  display: none;
+}

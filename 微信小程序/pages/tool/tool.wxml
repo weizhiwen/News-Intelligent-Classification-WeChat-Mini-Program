@@ -1,0 +1,10 @@
+<view id='tool'>
+  <view class='category'>
+    <view class='text'>分类：{{category}}</view>
+    <form>
+      <input placeholder="请输入新闻标题，AI帮你做分类" confirm-type='search' value='{{inputValue}}' bindconfirm="category_news" />
+    </form>
+    <!-- <button type='primary' bindtap="rich_scan">扫一扫，帮你做新闻分类</button> -->
+  </view>
+
+</view>
