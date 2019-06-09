@@ -1,2 +1,2 @@
 # 忽略 __pycache__ 文件
-/__pycache__
+__pycache__/*
